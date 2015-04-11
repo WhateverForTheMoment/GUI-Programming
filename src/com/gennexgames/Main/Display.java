@@ -16,11 +16,28 @@ public class Display extends JPanel {
 		this.frame = frame;
 	}
 	
+	
 	@Override
 	public void paintComponent(Graphics g){
-		g.clearRect(0,0,frame.getWidth(),frame.getHeight() - 20);
+		
+		double boxWidth = frame.getWidth() * (9/14); //- (frame.getWidth() / 2) + (frame.getWidth() / 7);
+		double boxHeight = frame.getHeight() * (9/14); // -(frame.getHeight() / 2) + (frame.getHeight() / 7);
+		
+		g.clearRect(0,0,frame.getWidth(),frame.getHeight());
+		
+		
 		g.setColor(Color.GREEN);
-		g.fillRect(0, 0, frame.getWidth(), frame.getHeight() - 20);
+		g.fillRect(0, 0, frame.getWidth(), frame.getHeight());
+		
+		
+		g.setColor(Color.CYAN);
+		g.fillRect(0, 0, (int)boxWidth , (int)boxHeight);
+		
+		
+		g.setColor(Color.ORANGE);
+		g.fillRect(0, (int)boxHeight, (int)boxWidth , (frame.getHeight()) - (int)boxHeight);
+		
+		
 		g.setColor(Color.BLACK);
 		g.setFont(new Font("TimesRoman",Font.PLAIN,100));
 		g.drawString(n + "", 0, 500);
