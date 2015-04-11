@@ -21,7 +21,7 @@ public class Frame extends JFrame{
 		this.setSize(800, 600);
 		this.setTitle("GUI Programming");
 		this.setVisible(true);
-		this.setResizable(false);
+		this.setResizable(true);
 		this.setLocationRelativeTo(null);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setLayout(null);
@@ -37,22 +37,38 @@ public class Frame extends JFrame{
 		display.setLocation(0, 20);
 		this.add(display);
 		
+		new MainHandler(this,display);
+		
 		JMenuBar menuBar = new JMenuBar();
 		JMenu file = new JMenu("File");
 		JMenuItem newItem = new JMenuItem("New");
+		JMenuItem saveItem = new JMenuItem("Save");
+		JMenuItem loadItem = new JMenuItem("Load");
 		newItem.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				display.setN(display.n + 1);
 			}
 		});
+		saveItem.addActionListener(new ActionListener(){
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				display.setN(display.n - 1);
+			}
+		});
+		loadItem.addActionListener(new ActionListener(){
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				display.setN(display.n = 0);
+			}
+		});
 		file.add(newItem);
+		file.add(saveItem);
+		file.add(loadItem);
 		menuBar.add(file);
 		menuBar.setLocation(0, 0);
-		menuBar.setSize(this.getWidth(), 20);
+		menuBar.setSize(MainHandler.ReturnBarWidth(), 20);
 		this.add(menuBar);
-		
-		new MainHandler(this,display);
 	}
 	
 }
