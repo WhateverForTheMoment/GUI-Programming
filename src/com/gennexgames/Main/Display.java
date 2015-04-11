@@ -19,12 +19,10 @@ public class Display extends JPanel {
 	
 	@Override
 	public void paintComponent(Graphics g){
-		
 		int boxWidth = (int) (frame.getWidth() * (9d/14d));
 		int boxHeight = (int) (frame.getHeight() * (9d/14d));
 		
 		g.clearRect(0,0,frame.getWidth(),frame.getHeight());
-		
 		
 		g.setColor(Color.GREEN);
 		g.fillRect(0, 0, frame.getWidth(), frame.getHeight());
