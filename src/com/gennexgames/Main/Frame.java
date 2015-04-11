@@ -12,6 +12,9 @@ import javax.swing.UnsupportedLookAndFeelException;
 
 public class Frame extends JFrame{
 
+	public JMenuBar menuBar;
+	final public Display display;
+	
 	public static void main(String[] args) {
 		new Frame();
 	}
@@ -32,14 +35,14 @@ public class Frame extends JFrame{
 			e.printStackTrace();
 		}
 		
-		final Display display = new Display();
+		display = new Display(this);
 		display.setSize(this.getWidth(), this.getHeight() - 20);
 		display.setLocation(0, 20);
 		this.add(display);
 		
 		new MainHandler(this,display);
 		
-		JMenuBar menuBar = new JMenuBar();
+		menuBar = new JMenuBar();
 		JMenu file = new JMenu("File");
 		JMenuItem newItem = new JMenuItem("New");
 		JMenuItem saveItem = new JMenuItem("Save");
@@ -47,19 +50,19 @@ public class Frame extends JFrame{
 		newItem.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				display.setN(display.n + 1);
+				display.n++;
 			}
 		});
 		saveItem.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				display.setN(display.n - 1);
+				display.n--;
 			}
 		});
 		loadItem.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				display.setN(display.n = 0);
+				display.n = 0;
 			}
 		});
 		file.add(newItem);
@@ -67,7 +70,7 @@ public class Frame extends JFrame{
 		file.add(loadItem);
 		menuBar.add(file);
 		menuBar.setLocation(0, 0);
-		menuBar.setSize(MainHandler.ReturnBarWidth(), 20);
+		menuBar.setSize(this.getWidth(), 20);
 		this.add(menuBar);
 	}
 	
