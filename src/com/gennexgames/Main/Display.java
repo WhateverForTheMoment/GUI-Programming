@@ -20,8 +20,8 @@ public class Display extends JPanel {
 	@Override
 	public void paintComponent(Graphics g){
 		
-		double boxWidth = frame.getWidth() * (9/14); //- (frame.getWidth() / 2) + (frame.getWidth() / 7);
-		double boxHeight = frame.getHeight() * (9/14); // -(frame.getHeight() / 2) + (frame.getHeight() / 7);
+		int boxWidth = (int) (frame.getWidth() * (9d/14d));
+		int boxHeight = (int) (frame.getHeight() * (9d/14d));
 		
 		g.clearRect(0,0,frame.getWidth(),frame.getHeight());
 		
