@@ -48,23 +48,12 @@ public class Display extends JPanel {
 		int boxWidth = (int) (frame.getWidth() * (9d/14d));
 		int boxHeight = (int) (frame.getHeight() * (9d/14d));
 		
-		//Color codeScreenColor = new Color(0, 100, 255);
-		//Color viewScreenColor = new Color(0, 148, 255);
-		//Color commandScreenColor = new Color(0, 100, 200);
-		
-		
-		//g.setColor(codeScreenColor);
-		//g.fillRect(0, 0, frame.getWidth(), frame.getHeight());
 		g.drawImage(codeScreenBox, boxWidth, 0, boxWidth, frame.getHeight(), null);
 		
 		
-		//g.setColor(viewScreenColor);
-		//g.fillRect(0, 0, boxWidth , boxHeight);
 		g.drawImage(viewScreenBox, 0, 0, boxWidth, boxHeight, null);
 		
 		
-		//g.setColor(commandScreenColor);
-		//g.fillRect(0, boxHeight, boxWidth , frame.getHeight() - boxHeight);
 		g.drawImage(commandScreenBox, 0, boxHeight, boxWidth, frame.getHeight() - boxHeight, null);
 		
 		

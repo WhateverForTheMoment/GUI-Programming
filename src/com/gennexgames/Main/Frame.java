@@ -3,6 +3,8 @@ package com.gennexgames.Main;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseWheelEvent;
+import java.awt.event.MouseWheelListener;
 
 import javax.swing.JFrame;
 import javax.swing.JMenu;
@@ -42,7 +44,12 @@ public class Frame extends JFrame{
 		
 		new MainHandler(this,display);
 		
-		
+		this.addMouseWheelListener(new MouseWheelListener(){
+            @Override
+			public void mouseWheelMoved(MouseWheelEvent e) {
+            	System.out.println(e.getPreciseWheelRotation());
+			};
+		});
 		//menu bar stuff
 		menuBar = new JMenuBar();
 		
