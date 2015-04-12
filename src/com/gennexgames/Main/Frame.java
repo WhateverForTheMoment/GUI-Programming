@@ -1,5 +1,6 @@
 package com.gennexgames.Main;
 
+import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -23,7 +24,6 @@ public class Frame extends JFrame{
 		new JFrame();
 		this.setSize(800, 600);
 		this.setTitle("GUI Programming");
-		this.setVisible(true);
 		this.setResizable(true);
 		this.setLocationRelativeTo(null);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -42,11 +42,20 @@ public class Frame extends JFrame{
 		
 		new MainHandler(this,display);
 		
+		
+		//menu bar stuff
 		menuBar = new JMenuBar();
+		
 		JMenu file = new JMenu("File");
+		JMenu edit = new JMenu("Edit");
+		
 		JMenuItem newItem = new JMenuItem("New");
 		JMenuItem saveItem = new JMenuItem("Save");
 		JMenuItem loadItem = new JMenuItem("Load");
+		
+		JMenuItem undoItem = new JMenuItem("Undo");
+		JMenuItem redoItem = new JMenuItem("Redo");
+		
 		newItem.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -65,13 +74,23 @@ public class Frame extends JFrame{
 				display.n = 0;
 			}
 		});
+		
 		file.add(newItem);
 		file.add(saveItem);
 		file.add(loadItem);
+		
+		edit.add(undoItem);
+		edit.add(redoItem);
+		
 		menuBar.add(file);
+		menuBar.add(edit);
 		menuBar.setLocation(0, 0);
 		menuBar.setSize(this.getWidth(), 20);
 		this.add(menuBar);
+		
+		
+		this.setVisible(true);
+		this.setMinimumSize(new Dimension(800, 600));
 	}
 	
 }
