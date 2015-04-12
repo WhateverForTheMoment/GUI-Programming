@@ -33,7 +33,7 @@ public class Display extends JPanel {
 		Color commandScreenColor = new Color(0, 100, 200);
 		
 		
-		g.clearRect(0,0,frame.getWidth(),frame.getHeight());
+		g.clearRect(0, 0, frame.getWidth(), frame.getHeight());
 		
 		
 		//g.setColor(Color.GREEN);
@@ -52,7 +52,7 @@ public class Display extends JPanel {
 		
 		
 		g.setColor(Color.BLACK);
-		g.setFont(new Font("TimesRoman",Font.PLAIN,100));
-		g.drawString(n + "", 0, 500);
+		g.setFont(new Font("TimesRoman", Font.PLAIN, ((frame.getWidth() / 8) / 2) + ((frame.getHeight() / 8) / 2)));
+		g.drawString(n + "", 0, frame.getHeight() - 100);
 	}
 }
