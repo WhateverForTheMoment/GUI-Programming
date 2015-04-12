@@ -48,14 +48,11 @@ public class Frame extends JFrame{
 		
 		JMenu file = new JMenu("File");
 		JMenu edit = new JMenu("Edit");
-		
 		JMenuItem newItem = new JMenuItem("New");
 		JMenuItem saveItem = new JMenuItem("Save");
 		JMenuItem loadItem = new JMenuItem("Load");
-		
 		JMenuItem undoItem = new JMenuItem("Undo");
 		JMenuItem redoItem = new JMenuItem("Redo");
-		
 		newItem.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -74,14 +71,11 @@ public class Frame extends JFrame{
 				display.n = 0;
 			}
 		});
-		
 		file.add(newItem);
 		file.add(saveItem);
 		file.add(loadItem);
-		
 		edit.add(undoItem);
 		edit.add(redoItem);
-		
 		menuBar.add(file);
 		menuBar.add(edit);
 		menuBar.setLocation(0, 0);
