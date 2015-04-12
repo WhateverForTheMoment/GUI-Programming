@@ -14,6 +14,9 @@ public class Display extends JPanel {
 
 	BufferedImage block1;
 	BufferedImage block2;
+	BufferedImage block3;
+	BufferedImage block4;
+	BufferedImage block5;
 	
 	public int n = 0;
 	
@@ -25,6 +28,9 @@ public class Display extends JPanel {
 		this.frame = frame;
 		block1 = RecourceLoader.loadImage("box1.png");
 		block2 = RecourceLoader.loadImage("box2.png");
+		block3 = RecourceLoader.loadImage("box3.png");
+		block4 = RecourceLoader.loadImage("box4.png");
+		block5 = RecourceLoader.loadImage("box5.png");
 	}
 	
 	
@@ -59,7 +65,10 @@ public class Display extends JPanel {
 		g.drawString(n + "", 0, frame.getHeight() - 100);
 		
 		
-		g.drawImage(block1, 10, 10, 100, 30, null);
-		g.drawImage(block2, 10, 50, 100, 30, null);
+		g.drawImage(block1, 10, boxHeight + 10, 130, 50, null);
+		g.drawImage(block2, 10, boxHeight + 60, 130, 50, null);
+		g.drawImage(block3, 10, boxHeight + 110, 130, 50, null);
+		g.drawImage(block4, 10, boxHeight + 160, 130, 50, null);
+		g.drawImage(block5, 10, boxHeight + 210, 130, 50, null);
 	}
 }
