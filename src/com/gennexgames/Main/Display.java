@@ -17,6 +17,9 @@ public class Display extends JPanel {
 	BufferedImage block3;
 	BufferedImage block4;
 	BufferedImage block5;
+	BufferedImage viewScreenBox;
+	BufferedImage codeScreenBox;
+	BufferedImage commandScreenBox;
 	
 	public int n = 0;
 	
@@ -31,6 +34,9 @@ public class Display extends JPanel {
 		block3 = RecourceLoader.loadImage("box3.png");
 		block4 = RecourceLoader.loadImage("box4.png");
 		block5 = RecourceLoader.loadImage("box5.png");
+		viewScreenBox = RecourceLoader.loadImage("viewScreenBox.png");
+		codeScreenBox = RecourceLoader.loadImage("codeScreenBox.png");
+		commandScreenBox = RecourceLoader.loadImage("commandScreenBox.png");
 	}
 	
 	
@@ -42,22 +48,24 @@ public class Display extends JPanel {
 		int boxWidth = (int) (frame.getWidth() * (9d/14d));
 		int boxHeight = (int) (frame.getHeight() * (9d/14d));
 		
-		
-		Color viewScreenColor = new Color(0, 148, 255);
-		Color codeScreenColor = new Color(0, 100, 255);
-		Color commandScreenColor = new Color(0, 100, 200);
-		
-		
-		g.setColor(codeScreenColor);
-		g.fillRect(0, 0, frame.getWidth(), frame.getHeight());
+		//Color codeScreenColor = new Color(0, 100, 255);
+		//Color viewScreenColor = new Color(0, 148, 255);
+		//Color commandScreenColor = new Color(0, 100, 200);
 		
 		
-		g.setColor(viewScreenColor);
-		g.fillRect(0, 0, boxWidth , boxHeight);
+		//g.setColor(codeScreenColor);
+		//g.fillRect(0, 0, frame.getWidth(), frame.getHeight());
+		g.drawImage(codeScreenBox, boxWidth, 0, boxWidth, frame.getHeight(), null);
 		
 		
-		g.setColor(commandScreenColor);
-		g.fillRect(0, boxHeight, boxWidth , (frame.getHeight()) - boxHeight);
+		//g.setColor(viewScreenColor);
+		//g.fillRect(0, 0, boxWidth , boxHeight);
+		g.drawImage(viewScreenBox, 0, 0, boxWidth, boxHeight, null);
+		
+		
+		//g.setColor(commandScreenColor);
+		//g.fillRect(0, boxHeight, boxWidth , frame.getHeight() - boxHeight);
+		g.drawImage(commandScreenBox, 0, boxHeight, boxWidth, frame.getHeight() - boxHeight, null);
 		
 		
 		g.setColor(Color.BLACK);
