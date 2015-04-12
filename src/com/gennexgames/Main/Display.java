@@ -29,8 +29,8 @@ public class Display extends JPanel {
 		
 		
 		Color viewScreenColor = new Color(0, 148, 255);
-		Color codeScreenColor = new Color(0, 255, 33);
-		Color commandScreenColor = new Color(255, 106, 0);
+		Color codeScreenColor = new Color(0, 100, 255);
+		Color commandScreenColor = new Color(0, 100, 200);
 		
 		
 		g.clearRect(0,0,frame.getWidth(),frame.getHeight());
