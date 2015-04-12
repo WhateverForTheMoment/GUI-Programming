@@ -12,8 +12,8 @@ import com.gennexgames.Resources.RecourceLoader;
 
 public class Display extends JPanel {
 
-	BufferedImage box1;
-	BufferedImage box2;
+	BufferedImage block1;
+	BufferedImage block2;
 	
 	public int n = 0;
 	
@@ -23,8 +23,8 @@ public class Display extends JPanel {
 	
 	public Display(Frame frame){
 		this.frame = frame;
-		box1 = RecourceLoader.loadImage("box1.png");
-		box2 = RecourceLoader.loadImage("box2.png");
+		block1 = RecourceLoader.loadImage("box1.png");
+		block2 = RecourceLoader.loadImage("box2.png");
 	}
 	
 	
@@ -59,7 +59,7 @@ public class Display extends JPanel {
 		g.drawString(n + "", 0, frame.getHeight() - 100);
 		
 		
-		g.drawImage(box1, 10, 10, 100, 30, null);
-		g.drawImage(box2, 10, 50, 100, 30, null);
+		g.drawImage(block1, 10, 10, 100, 30, null);
+		g.drawImage(block2, 10, 50, 100, 30, null);
 	}
 }
