@@ -18,6 +18,8 @@ public class Frame extends JFrame{
 	public JMenuBar menuBar;
 	final public Display display;
 	
+	public int scrollDirection;
+	
 	public static void main(String[] args) {
 		new Frame();
 	}
@@ -47,7 +49,7 @@ public class Frame extends JFrame{
 		this.addMouseWheelListener(new MouseWheelListener(){
             @Override
 			public void mouseWheelMoved(MouseWheelEvent e) {
-            	System.out.println(e.getPreciseWheelRotation());
+            	scrollDirection = scrollDirection + (int) (e.getPreciseWheelRotation() * 2);
 			};
 		});
 		//menu bar stuff

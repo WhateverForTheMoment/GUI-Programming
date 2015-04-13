@@ -50,22 +50,19 @@ public class Display extends JPanel {
 		
 		g.drawImage(codeScreenBox, boxWidth, 0, boxWidth, frame.getHeight(), null);
 		
+		g.drawImage(commandScreenBox, 0, boxHeight, boxWidth, frame.getHeight() - boxHeight, null);
+		
+		g.drawImage(block1, 10, boxHeight + 10  + frame.scrollDirection, 130, 50, null);
+		g.drawImage(block2, 10, boxHeight + 60  + frame.scrollDirection, 130, 50, null);
+		g.drawImage(block3, 10, boxHeight + 110  + frame.scrollDirection, 130, 50, null);
+		g.drawImage(block4, 10, boxHeight + 160  + frame.scrollDirection, 130, 50, null);
+		g.drawImage(block5, 10, boxHeight + 210  + frame.scrollDirection, 130, 50, null);
 		
 		g.drawImage(viewScreenBox, 0, 0, boxWidth, boxHeight, null);
-		
-		
-		g.drawImage(commandScreenBox, 0, boxHeight, boxWidth, frame.getHeight() - boxHeight, null);
 		
 		
 		g.setColor(Color.BLACK);
 		g.setFont(new Font("TimesRoman", Font.PLAIN, ((frame.getWidth() / 8) / 2) + ((frame.getHeight() / 8) / 2)));
 		g.drawString(n + "", 0, frame.getHeight() - 100);
-		
-		
-		g.drawImage(block1, 10, boxHeight + 10, 130, 50, null);
-		g.drawImage(block2, 10, boxHeight + 60, 130, 50, null);
-		g.drawImage(block3, 10, boxHeight + 110, 130, 50, null);
-		g.drawImage(block4, 10, boxHeight + 160, 130, 50, null);
-		g.drawImage(block5, 10, boxHeight + 210, 130, 50, null);
 	}
 }
