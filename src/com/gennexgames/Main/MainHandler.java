@@ -7,7 +7,7 @@ public class MainHandler implements Runnable{
 	Frame frame;
 	Display display;
 	
-	boolean running = true;
+	public static boolean running = true;
 	public static Dimension frameSize;
 	
 	public MainHandler(Frame frame, Display display){

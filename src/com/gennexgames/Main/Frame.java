@@ -19,6 +19,8 @@ public class Frame extends JFrame{
 	final public Display display;
 	
 	public int scrollDirection;
+	public int topScrollDrection = -260;
+	public int bottomScrollDrection = 145;
 	
 	public static void main(String[] args) {
 		new Frame();
@@ -49,8 +51,22 @@ public class Frame extends JFrame{
 		this.addMouseWheelListener(new MouseWheelListener(){
             @Override
 			public void mouseWheelMoved(MouseWheelEvent e) {
-            	scrollDirection = scrollDirection + (int) (e.getPreciseWheelRotation() * 2);
-			};
+            	if (getHeight() < 870){
+            		if (scrollDirection >= topScrollDrection){
+            			if (scrollDirection <= bottomScrollDrection){
+            				scrollDirection = scrollDirection + (int) (e.getPreciseWheelRotation() * 2);
+            			}
+            			if (scrollDirection < topScrollDrection){ 
+            				scrollDirection = topScrollDrection;
+            			}
+            			if (scrollDirection > bottomScrollDrection){ 
+            				scrollDirection = bottomScrollDrection;
+            			}
+            		}
+            	}else{
+            		scrollDirection = 0;
+            	}
+            }
 		});
 		//menu bar stuff
 		menuBar = new JMenuBar();
